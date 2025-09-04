@@ -1,25 +1,30 @@
 #!/bin/bash
 
-START=$(date +%s%N)
+START=$(date +%s)
 TIMES=$(date +%H:%M)
 
 if [[ $# -eq 3 ]]; then
     dirname=$1
     namefile=$2
     size=$3
-    
+
     source ./check_parametr.sh
-    END=$(date +%s%N)
-    DIFF=$((($END - $START)/1000000))
+
+    END=$(date +%s)
+    DIFF=$((END - START))
     TIMEE=$(date +%H:%M)
+
     echo "Время начала: $TIMES"
     echo "Время конца: $TIMEE"
-    echo "Скрипт работает $DIFF ms"
+    echo "Скрипт работал $DIFF секунд"
 
-    echo "">>logFiles
-    echo "Start time: $TIMES" >>logFiles
-    echo "End time: $TIMEE" >>logFiles
-    echo "Script working $DIFF ms" >>logFiles
+    {
+      echo ""
+      echo "Start time: $TIMES"
+      echo "End time: $TIMEE"
+      echo "Script working $DIFF sec"
+    } >> 02.log
 else
     echo "Ошибка, неправильные параметры"
+    exit 1
 fi
