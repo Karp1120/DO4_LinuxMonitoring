@@ -1,14 +1,14 @@
 #!/bin/bash
 
-echo "Введите путь logfile"
+echo "Введите имя лог-файла (по умолчанию 02.log):"
 read log
-remfiles=$(cat ../02/"$log"| awk -F'|' '{print $2}')
-if [ -e ../02/"$log" ]; then 
-    echo "okey.Let's go"
-    for delete in $remfiles
-    do
-    sudo rm -rf $delete
+log=${log:-02.log}
+
+if [ -f "./$log" ]; then
+    echo "okey. Let's go"
+    awk -F'|' '{print $2}' "./$log" | while read -r path; do
+        [ -n "$path" ] && rm -rf "$path"
     done
-else 
+else
     echo "$log не найден"
 fi
