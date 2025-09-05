@@ -1,4 +1,6 @@
 #!/bin/bash
+#proverkaproverkaproverka
+#proverka
 if [ $# != 0 ] ; then
     echo "Ошибка что-то не так :/"
 else
