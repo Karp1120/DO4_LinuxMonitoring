@@ -16,10 +16,10 @@ if [[ $# -eq 3 ]]; then
     echo "Время конца: $TIMEE"
     echo "Скрипт работает $DIFF ms"
 
-    echo "">>logFiles
-    echo "Start time: $TIMES" >>logFiles
-    echo "End time: $TIMEE" >>logFiles
-    echo "Script working $DIFF ms" >>logFiles
+    echo "">>02.log
+    echo "Start time: $TIMES" >>02.log
+    echo "End time: $TIMEE" >>02.log
+    echo "Script working $DIFF ms" >>02.log
 else
     echo "Ошибка, неправильные параметры"
 fi

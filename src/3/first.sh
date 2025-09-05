@@ -6,8 +6,11 @@ log=${log:-02.log}
 
 if [ -f "./$log" ]; then
     echo "okey. Let's go"
-    awk -F'|' '{print $2}' "./$log" | while read -r path; do
-        [ -n "$path" ] && rm -rf "$path"
+    awk -F'|' '{print $2}' "./$log" | sed 's/^ *//;s/ *$//' | while read -r path; do
+        if [ -n "$path" ]; then
+            rm -rf "$path"
+            echo "Удалено: $path"
+        fi
     done
 else
     echo "$log не найден"
