@@ -7,7 +7,7 @@ b=1
 
 for ((i=0; i<5; i++)); do
     logfile="day${b}.log"
-    numbrecords=$((RANDOM % (1000 - 100 +1)))  
+    numbrecords=$((100 + RANDOM % 901))  
     > "$logfile"
     logdate=$(date -d "-$i day" +%d/%b/%Y) #Дата для текущего файла (i дней назад)
     for ((j=0; j<$numbrecords; j++)); do
