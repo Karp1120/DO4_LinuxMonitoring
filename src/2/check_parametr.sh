@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [[ (!"$dirname" =~ ^[A-Za-z]+$) || (${firstParam} -gt 7) ]]; then
+if [[ (!"$dirname" =~ ^[A-Za-z]+$) || (${#firstParam} -gt 7) ]]; then
     echo "Ошибка!!! Неправильный ввод названия папки"
     exit 1
 fi
