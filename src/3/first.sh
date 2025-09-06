@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "Введите путь к logfile (можно абсолютный или относительный)"
+echo "Введите путь к logFiles"
 read -r log
 
 if [ -e "$log" ]; then

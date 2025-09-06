@@ -21,5 +21,5 @@ if [[ $# -eq 3 ]]; then
     echo "End time: $TIMEE" >>logFiles
     echo "Script working $DIFF ms" >>logFiles
 else
-    echo "Ошибка, неправильные параметры"
+    echo "Ошибка ! Неправильные параметры 2.0"
 fi
