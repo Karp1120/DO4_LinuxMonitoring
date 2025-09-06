@@ -1,11 +1,10 @@
 #!/bin/bash
 
-echo "Введите имя лог-файла (по умолчанию 02.log):"
+echo "Введите путь logfile"
 read log
-
 remfiles=$(cat ../02/"$log"| awk -F'|' '{print $2}')
 if [ -e ../02/"$log" ]; then 
-    echo "start"
+    echo "okey.Let's go"
     for delete in $remfiles
     do
     sudo rm -rf $delete
